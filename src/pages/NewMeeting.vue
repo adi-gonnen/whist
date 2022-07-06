@@ -8,9 +8,8 @@
 import LeagueController from "components/controllers/LeagueController";
 
 export default {
-  name: "IndexPage",
+  name: "NewMeetingPage",
   components: { LeagueController },
-  data: () => ({}),
   computed: {},
   methods: {},
 };

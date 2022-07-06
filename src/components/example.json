@@ -4,6 +4,7 @@
       "meetings": {
         "20220621": {
           "isLeague": true,
+          "meetCompleted": true,
           "players": [],
           "stages": [
             {

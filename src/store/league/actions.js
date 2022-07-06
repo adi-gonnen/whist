@@ -1,6 +1,6 @@
 import leagueService from "./service";
 
-export function getPlayers({ state, commit, dispatch }) {
-  const players = leagueService.getPlayers();
-  commit("set", { name: "players", val: players });
+export function getUsers({ state, commit, dispatch }) {
+  const users = leagueService.getUsers();
+  commit("set", { name: "users", val: users });
 }

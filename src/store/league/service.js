@@ -1,4 +1,4 @@
-function getPlayers() {
+function getUsers() {
   return {
     1: { name: "עודד ליפשיץ" },
     28: { name: "יעל שפירא" },
@@ -21,5 +21,5 @@ function getPlayers() {
 }
 
 export default {
-  getPlayers,
+  getUsers,
 };

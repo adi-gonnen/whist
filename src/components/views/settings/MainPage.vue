@@ -39,7 +39,8 @@ export default {
   },
   methods: {
     onClick(action) {
-      this.$router.push(`/${action}`);
+      this.$router.push("/open");
+      // this.$router.push(`/${action}`);
     },
   },
 };

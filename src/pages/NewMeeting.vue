@@ -1,6 +1,6 @@
 <template>
   <q-page class="column items-center q-py-xl">
-    <league-controller />
+    <league-controller mode="create" />
   </q-page>
 </template>
 

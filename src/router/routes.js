@@ -7,13 +7,13 @@ const routes = [
 
   {
     path: "/create",
-    component: () => import("layouts/MainLayout.vue"),
+    component: () => import("layouts/InnerLayout.vue"),
     children: [{ path: "", component: () => import("pages/NewMeeting.vue") }],
   },
 
   {
     path: "/open",
-    component: () => import("layouts/MainLayout.vue"),
+    component: () => import("layouts/InnerLayout.vue"),
     children: [{ path: "", component: () => import("pages/OpenMeeting.vue") }],
   },
 

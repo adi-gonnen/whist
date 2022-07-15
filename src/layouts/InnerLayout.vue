@@ -4,8 +4,9 @@
       <q-toolbar>
         <basic-button :elem="btnElem" @onClick="onBack" />
         <q-toolbar-title class="row justify-center items-center q-mb-none">
-          <p>{{ title }}</p>
+          <p class="toolbar-title">{{ title }}</p>
         </q-toolbar-title>
+        <div class="placeholder-div"></div>
       </q-toolbar>
     </q-header>
 
@@ -24,7 +25,7 @@ export default {
   data: () => ({}),
   computed: {
     title() {
-      return "";
+      return "פתיחת מפגש";
     },
     btnElem() {
       return {
@@ -54,10 +55,14 @@ export default {
 .q-toolbar {
   height: 80px;
   background-color: #fff;
-  color: $primary;
+  // color: $primary;
+  color: #000;
+  & .toolbar-title {
+    font-weight: bold;
+  }
 }
-.main-img {
-  height: 78px;
+.placeholder-div {
+  min-width: 93px;
 }
 
 @media (min-width: 600px) {

@@ -1,6 +1,5 @@
 <template>
   <div class="column">
-    <basic-button :elem="btnElem('create')" @onClick="onClick('create')" />
     <basic-button :elem="btnElem('open')" @onClick="onClick('open')" />
     <basic-button :elem="btnElem('players')" @onClick="onClick('players')" />
     <basic-button :elem="btnElem('rules')" @onClick="onClick('rules')" />
@@ -17,10 +16,8 @@ export default {
   computed: {
     btnLabel() {
       return (key) => {
-        let text = "פתיחת טורניר חדש";
-        if (key === "open") {
-          text = "פתיחת טורניר קיים";
-        } else if (key === "players") {
+        let text = "פתיחת טורניר";
+        if (key === "players") {
           text = "ניהול שחקנים";
         } else if (key === "rules") {
           text = "תקנון";
@@ -39,8 +36,7 @@ export default {
   },
   methods: {
     onClick(action) {
-      this.$router.push("/open");
-      // this.$router.push(`/${action}`);
+      this.$router.push(`/${action}`);
     },
   },
 };

@@ -1,156 +1,162 @@
 {
   "clubs": {
     "oded": {
-      "meetings": {
-        "20220621": {
-          "isLeague": true,
-          "meetCompleted": true,
-          "players": [],
-          "stages": [
-            {
-              "tables": [
+      "leagues": {
+        "random_key": {
+          "title": "",
+          "meetings": {
+            "20220621": {
+              "isLeague": true,
+              "keepResults": true,
+              "meetCompleted": true,
+              "players": [],
+              "stages": [
                 {
-                  "players": {
-                    "28": {
-                      "score": 49,
-                      "rounds": [
-                        {
-                          "succeed": true,
-                          "bid": 6,
-                          "isHeighest": true
+                  "tables": [
+                    {
+                      "players": {
+                        "28": {
+                          "score": 49,
+                          "rounds": [
+                            {
+                              "succeed": true,
+                              "bid": 6,
+                              "isHeighest": true
+                            }
+                          ]
+                        },
+                        "42": {
+                          "score": 128
+                        },
+                        "12": {
+                          "score": -14
+                        },
+                        "76": {
+                          "score": 45
                         }
-                      ]
+                      }
                     },
-                    "42": {
-                      "score": 128
+                    {
+                      "players": {
+                        "33": {
+                          "score": 220
+                        },
+                        "13": {
+                          "score": 17
+                        },
+                        "60": {
+                          "score": 129
+                        },
+                        "24": {
+                          "score": 190
+                        }
+                      }
                     },
-                    "12": {
-                      "score": -14
+                    {
+                      "players": {
+                        "80": {
+                          "score": 111
+                        },
+                        "3": {
+                          "score": 308
+                        },
+                        "17": {
+                          "score": 129
+                        },
+                        "20": {
+                          "score": 90
+                        }
+                      }
                     },
-                    "76": {
-                      "score": 45
+                    {
+                      "players": {
+                        "50": {
+                          "score": 80
+                        },
+                        "55": {
+                          "score": 112
+                        },
+                        "7": {
+                          "score": 76
+                        },
+                        "21": {
+                          "score": 79
+                        }
+                      }
                     }
-                  }
+                  ]
                 },
                 {
-                  "players": {
-                    "33": {
-                      "score": 220
+                  "tables": [
+                    {
+                      "players": {
+                        "42": {
+                          "score": 149
+                        },
+                        "33": {
+                          "score": 240
+                        },
+                        "3": {
+                          "score": 78
+                        },
+                        "55": {
+                          "score": 145
+                        }
+                      }
                     },
-                    "13": {
-                      "score": 17
+                    {
+                      "players": {
+                        "28": {
+                          "score": 220
+                        },
+                        "24": {
+                          "score": 17
+                        },
+                        "17": {
+                          "score": 129
+                        },
+                        "50": {
+                          "score": 190
+                        }
+                      }
                     },
-                    "60": {
-                      "score": 129
+                    {
+                      "players": {
+                        "60": {
+                          "score": 111
+                        },
+                        "3": {
+                          "score": 308
+                        },
+                        "80": {
+                          "score": 129
+                        },
+                        "21": {
+                          "score": 90
+                        }
+                      }
                     },
-                    "24": {
-                      "score": 190
+                    {
+                      "players": {
+                        "13": {
+                          "score": 80
+                        },
+                        "12": {
+                          "score": 112
+                        },
+                        "20": {
+                          "score": 76
+                        },
+                        "7": {
+                          "score": 79
+                        }
+                      }
                     }
-                  }
-                },
-                {
-                  "players": {
-                    "80": {
-                      "score": 111
-                    },
-                    "3": {
-                      "score": 308
-                    },
-                    "17": {
-                      "score": 129
-                    },
-                    "20": {
-                      "score": 90
-                    }
-                  }
-                },
-                {
-                  "players": {
-                    "50": {
-                      "score": 80
-                    },
-                    "55": {
-                      "score": 112
-                    },
-                    "7": {
-                      "score": 76
-                    },
-                    "21": {
-                      "score": 79
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "tables": [
-                {
-                  "players": {
-                    "42": {
-                      "score": 149
-                    },
-                    "33": {
-                      "score": 240
-                    },
-                    "3": {
-                      "score": 78
-                    },
-                    "55": {
-                      "score": 145
-                    }
-                  }
-                },
-                {
-                  "players": {
-                    "28": {
-                      "score": 220
-                    },
-                    "24": {
-                      "score": 17
-                    },
-                    "17": {
-                      "score": 129
-                    },
-                    "50": {
-                      "score": 190
-                    }
-                  }
-                },
-                {
-                  "players": {
-                    "60": {
-                      "score": 111
-                    },
-                    "3": {
-                      "score": 308
-                    },
-                    "80": {
-                      "score": 129
-                    },
-                    "21": {
-                      "score": 90
-                    }
-                  }
-                },
-                {
-                  "players": {
-                    "13": {
-                      "score": 80
-                    },
-                    "12": {
-                      "score": 112
-                    },
-                    "20": {
-                      "score": 76
-                    },
-                    "7": {
-                      "score": 79
-                    }
-                  }
+                  ]
                 }
               ]
             }
-          ]
+          }
         }
       },
       "players": {

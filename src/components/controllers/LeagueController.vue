@@ -1,24 +1,27 @@
 <template>
   <div class="">
-    <create-league v-if="mode === 'create'" :users="users" :players="players" />
-    <open-league v-else :users="users" :players="players" />
+    <!-- <create-league v-if="mode === 'create'" :users="users" :players="players" /> -->
+    <open-league :users="users" :players="players" />
   </div>
 </template>
 
 <script>
-import CreateLeague from "../views/league/CreateLeague";
+// import CreateLeague from "../views/league/CreateLeague";
 import OpenLeague from "../views/league/OpenLeague";
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   name: "LeagueController",
-  components: { CreateLeague, OpenLeague },
+  components: { OpenLeague },
   props: ["mode"],
   data: () => ({}),
   computed: {
     ...mapState({
-      users: (state) => state.league.users,
       players: (state) => state.league.players,
+    }),
+    ...mapGetters({
+      users: "league/getUsers",
+      lastLeague: "league/getLastLeague",
     }),
   },
   created() {

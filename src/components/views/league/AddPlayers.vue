@@ -1,7 +1,6 @@
 <template>
-  <div class="column">
+  <div class="add-players column">
     <div>
-      <p class="title">הוסף שחקנים</p>
       <q-select
         :model-value="selected"
         :options="usersList"
@@ -22,25 +21,13 @@
     </div>
 
     <!-- players list -->
-    <div class="selected-list row border-grey q-mb-md">
-      <q-chip
-        v-for="(player, idx) in playersList"
-        :key="idx"
-        color="white"
-        class="chip-border q-px-md"
-      >
-        <template v-slot:default>
-          <div class="row items-center">
-            <span class="chip-border-label">{{ player?.label }}</span>
-            <q-icon
-              name="clear"
-              class="clear-icon cursor-pointer"
-              @click="$emit('delete', idx)"
-            />
-          </div>
-        </template>
-      </q-chip>
-    </div>
+    <players-list
+      :users="users"
+      :players="players"
+      :clear="true"
+      @select="onSelect"
+      @delete="$emit('delete', $event)"
+    />
 
     <!-- total line -->
     <div class="self-end q-mb-lg">
@@ -50,9 +37,11 @@
 </template>
 
 <script>
+import PlayersList from "./PlayersList";
+
 export default {
   name: "AddPlayers",
-  components: {},
+  components: { PlayersList },
   props: ["users", "players"],
   emits: ["select", "delete"],
   data: () => ({
@@ -103,25 +92,15 @@ export default {
     onFilter(val) {
       this.filter = val;
     },
-    onDelete(val) {},
   },
 };
 </script>
 
 <style scoped lang="scss">
+.add-players {
+  width: 100%;
+}
 .main-btns {
   width: 300px;
-}
-.selected-list {
-  min-height: 42px;
-  align-items: center;
-  border: 1px solid #b7b4a5;
-  border-radius: 6px;
-  padding: 8px;
-}
-.clear-icon {
-  margin-right: 8px;
-  padding-right: 4px;
-  border-right: 1px solid #b7b4a5;
 }
 </style>

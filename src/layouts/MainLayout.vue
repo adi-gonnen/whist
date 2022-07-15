@@ -4,7 +4,7 @@
       <q-toolbar>
         <div class="btn-container"></div>
         <q-toolbar-title class="row justify-center items-center q-mb-none">
-          <basic-button :elem="btnElem" @onClick="onClick" />
+          <p class="toolbar-title">מועדון הוויסט</p>
         </q-toolbar-title>
 
         <img v-if="isDesktop" src="images/cards.jpg" class="main-img" />
@@ -18,30 +18,16 @@
 </template>
 
 <script>
-import BasicButton from "components/common/BasicButton";
-
 export default {
   name: "MainLayout",
-  components: { BasicButton },
+  components: {},
   data: () => ({}),
   computed: {
-    btnElem() {
-      return {
-        label: "מועדון הוויסט",
-        flat: true,
-        class: "toolbar-title",
-        size: "24px",
-      };
-    },
     isDesktop() {
       return this.$q.screen.gt.sm;
     },
   },
-  methods: {
-    onClick() {
-      this.$router.push("/");
-    },
-  },
+  methods: {},
 };
 </script>
 

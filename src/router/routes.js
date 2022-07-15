@@ -7,23 +7,26 @@ const routes = [
 
   {
     path: "/create",
+    name: "create",
     component: () => import("layouts/InnerLayout.vue"),
     children: [{ path: "", component: () => import("pages/NewMeeting.vue") }],
   },
 
   {
     path: "/open",
+    name: "open",
     component: () => import("layouts/InnerLayout.vue"),
     children: [{ path: "", component: () => import("pages/OpenMeeting.vue") }],
   },
 
-  // {
-  //   path: "/players",
-  //   component: () => import("layouts/MainLayout.vue"),
-  //   children: [
-  //     { path: "", component: () => import("src/pages/EditPlayers.vue") },
-  //   ],
-  // },
+  {
+    path: "/players",
+    name: "players",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("src/pages/EditPlayers.vue") },
+    ],
+  },
 
   // {
   //   path: "/rules",

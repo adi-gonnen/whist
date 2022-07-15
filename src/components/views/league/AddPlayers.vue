@@ -30,7 +30,7 @@
     />
 
     <!-- total line -->
-    <div class="self-end q-mb-lg">
+    <div class="self-end">
       <p>{{ totalText }}</p>
     </div>
   </div>

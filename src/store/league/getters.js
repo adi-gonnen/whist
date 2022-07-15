@@ -14,3 +14,15 @@ export function getLastLeague(state) {
   });
   return leagues[key];
 }
+
+export function getLastMeeting(state, getters) {
+  const league = getters.getLastLeague;
+  const meetings = Object.keys(league?.meetings || {});
+  if (!league || !meetings.length) {
+    return null;
+  }
+  const date = meetings.find((i) => {
+    return !league.meetings[i].isCompleted;
+  });
+  return { [date]: league.meetings[date] };
+}

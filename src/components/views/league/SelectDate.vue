@@ -1,18 +1,17 @@
 <template>
-  <div>
-    <p class="title q-pb-lg">הזן תאריך</p>
+  <div class="column">
     <q-btn-toggle
-      v-model="isLeagueNew"
+      v-model="leagueNew"
       :options="toggleOptions"
       class="toggle-league-btn q-mx-sm q-mb-md"
-      @update:model-value="$emit('setLeague', $event)"
+      @update:model-value="$emit('update', 'isLeagueNew', $event)"
     />
     <q-date
-      v-model="date"
-      flat
+      :model-value="localDate"
       minimal
+      flat
       dir="ltr"
-      @update:model-value="$emit('setDate', $event)"
+      @update:model-value="onUpdate"
     />
   </div>
 </template>
@@ -21,11 +20,11 @@
 export default {
   name: "SelectDate",
   components: {},
-  props: [],
-  emits: ["setLeague", "setDate"],
+  props: ["date", "league"],
+  emits: ["update"],
   data: () => ({
-    isLeagueNew: false,
-    date: "",
+    localDate: "",
+    leagueNew: false,
   }),
   computed: {
     toggleOptions() {
@@ -35,8 +34,29 @@ export default {
       ];
     },
   },
-  methods: {},
+  mounted() {
+    this.localDate = this.date;
+    this.leagueNew = this.league;
+  },
+  methods: {
+    onUpdate(val) {
+      const date = val.replace(/\//g, "");
+      this.$emit("update", "date", date);
+    },
+  },
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.toggle-league-btn {
+  &::v-deep() {
+    .q-btn {
+      width: 50%;
+      height: 45px;
+    }
+  }
+}
+.date-container .q-date {
+  width: 100%;
+}
+</style>

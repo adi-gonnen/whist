@@ -22,6 +22,7 @@ export default {
     ...mapGetters({
       users: "league/getUsers",
       lastLeague: "league/getLastLeague",
+      lastMeeting: "league/getLastMeeting",
     }),
   },
   created() {

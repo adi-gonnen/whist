@@ -14,24 +14,13 @@
     >
       <!-- select date -->
       <q-carousel-slide :name="1" class="column items-center">
-        <p class="title q-pb-lg">הזן תאריך</p>
-        <q-btn-toggle
-          v-model="isLeagueNew"
-          :options="toggleOptions"
-          class="toggle-league-btn q-mx-sm q-mb-md"
-        />
-        <q-date
-          v-model="date"
-          flat
-          minimal
-          dir="ltr"
-          @update:model-value="onSetDate"
-        />
+        <carousel-title :date="date" title="הזן תאריך" />
+        <select-date :date="date" :league="isLeagueNew" @update="onUpdate" />
       </q-carousel-slide>
 
       <!--add players  -->
-      <q-carousel-slide :name="2" class="column items-center">
-        <p class="title q-pb-lg">הוסף שחקנים</p>
+      <q-carousel-slide :name="2" class="column">
+        <carousel-title :date="date" title="הוסף שחקנים" />
         <add-players
           :users="users"
           :players="players || []"
@@ -41,8 +30,8 @@
       </q-carousel-slide>
 
       <!-- action btn -->
-      <q-carousel-slide :name="3" class="column no-wrap items-center">
-        <p class="title q-pb-lg">כפתורי פעולה</p>
+      <q-carousel-slide :name="3" class="column no-wrap">
+        <carousel-title :date="date" title="כפתורי פעולה" />
         <action-btns :users="users" :players="players || []" />
       </q-carousel-slide>
     </q-carousel>
@@ -50,13 +39,16 @@
 </template>
 
 <script>
-// import BasicButton from "../../common/BasicButton";
+import CarouselTitle from "./CarouselTitle";
+import SelectDate from "./SelectDate";
 import AddPlayers from "./AddPlayers";
 import ActionBtns from "./ActionBtns";
+import moment from "moment";
+import { setRandomKey } from "src/services/utils";
 
 export default {
   name: "OpenLeague",
-  components: { AddPlayers, ActionBtns },
+  components: { CarouselTitle, SelectDate, AddPlayers, ActionBtns },
   props: ["users"],
   emits: ["open", "initLeague"],
   data: () => ({
@@ -66,31 +58,22 @@ export default {
     players: [],
   }),
   computed: {
-    toggleOptions() {
-      return [
-        { value: false, label: "ליגה אחרונה" },
-        { value: true, label: "ליגה חדשה" },
-      ];
+    dateDisplay() {
+      return moment(this.date).format("DD/MM/YYYY");
     },
-    // btnElem() {
-    //   return (key) => {
-    //     const label = key === "create" ? "ליגה חדשה" : "ליגה קיימת";
-    //     return {
-    //       label,
-    //       class: "action-btn q-ml-md q-mb-lg",
-    //     };
-    //   };
-    // },
   },
   methods: {
+    onUpdate(key, val) {
+      this[key] = val;
+      if (key === "date") {
+        this.section = 2;
+      }
+    },
     onSelect(val) {
       this.players.push(val);
     },
     onDelete(idx) {
       this.players.splice(idx, 1);
-    },
-    onSetDate(val) {
-      this.section = 2;
     },
   },
 };
@@ -98,7 +81,7 @@ export default {
 
 <style scoped lang="scss">
 .open-league-carousel {
-  height: 500px;
+  height: 550px;
   width: 740px;
   &::v-deep() {
     .q-carousel__arrow .q-icon {
@@ -116,9 +99,7 @@ export default {
   width: 294px;
   height: 55px;
 }
-.date-container .q-date {
-  width: 100%;
-}
+
 .main-btns {
   width: 300px;
 }
